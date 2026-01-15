@@ -17,6 +17,8 @@ func _physics_process(delta: float) -> void:
 		movement.x -= 1
 	velocity = movement * 300
 	move_and_slide()
+	if vert == true:
+		$"../../Camera/Camera2D".position = $".".position
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
