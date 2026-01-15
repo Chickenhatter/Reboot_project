@@ -1,0 +1,147 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0ts4u6o18bcy"]
+
+[ext_resource type="Script" uid="uid://btxw7rcphuje4" path="res://character_body_2d.gd" id="1_upmy7"]
+[ext_resource type="Texture2D" uid="uid://7wqkadpdnhdh" path="res://icon.svg" id="2_gx2gx"]
+[ext_resource type="Script" uid="uid://ltkay7vwttor" path="res://area_2d.gd" id="3_upmy7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b54qk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tfw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gx2gx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smcay"]
+
+[sub_resource type="Curve2D" id="Curve2D_gx2gx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -6520)
+}
+point_count = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46pen"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"No",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gx2gx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfnpb"]
+size = Vector2(1239, 52)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Character" type="Node2D" parent="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Node2D/Character"]
+script = ExtResource("1_upmy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Character/CharacterBody2D"]
+shape = SubResource("RectangleShape2D_b54qk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Character/CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_5tfw5")
+
+[node name="Area2D" type="Area2D" parent="Node2D/Character/CharacterBody2D"]
+rotation = -1.5707964
+script = ExtResource("3_upmy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Character/CharacterBody2D/Area2D"]
+shape = SubResource("RectangleShape2D_smcay")
+
+[node name="Path2D" type="Path2D" parent="Node2D/Character/CharacterBody2D/Area2D"]
+curve = SubResource("Curve2D_gx2gx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Node2D/Character/CharacterBody2D/Area2D/Path2D"]
+rotation = -1.5707964
+
+[node name="Fireball" type="Area2D" parent="Node2D/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D/Fireball"]
+shape = SubResource("RectangleShape2D_smcay")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D"]
+sprite_frames = SubResource("SpriteFrames_46pen")
+animation = &"No"
+autoplay = "No"
+
+[node name="Tileset" type="Node2D" parent="Node2D"]
+
+[node name="Hard" type="TileMapLayer" parent="Node2D/Tileset"]
+z_index = -20
+
+[node name="Behind" type="TileMapLayer" parent="Node2D/Tileset"]
+z_index = -10
+
+[node name="Infront" type="TileMapLayer" parent="Node2D/Tileset"]
+z_index = 10
+
+[node name="Camera" type="Node2D" parent="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/Camera"]
+
+[node name="Outer" type="Node2D" parent="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="Node2D/Outer"]
+position = Vector2(-14, -35)
+
+[node name="Name" type="Area2D" parent="Node2D/Outer/Node2D"]
+position = Vector2(-168, -135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Outer/Node2D/Name"]
+position = Vector2(179.5, -222)
+shape = SubResource("RectangleShape2D_tfnpb")
+
+[node name="Node2D2" type="Node2D" parent="Node2D/Outer"]
+position = Vector2(-54, 785)
+
+[node name="Name" type="Area2D" parent="Node2D/Outer/Node2D2"]
+position = Vector2(-140, -143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Outer/Node2D2/Name"]
+position = Vector2(179.5, -222)
+shape = SubResource("RectangleShape2D_tfnpb")
+
+[node name="Node2D3" type="Node2D" parent="Node2D/Outer"]
+position = Vector2(-295, 70)
+rotation = -1.5707964
+
+[node name="Name" type="Area2D" parent="Node2D/Outer/Node2D3"]
+position = Vector2(-168, -135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Outer/Node2D3/Name"]
+position = Vector2(179.5, -222)
+shape = SubResource("RectangleShape2D_tfnpb")
+
+[node name="Node2D4" type="Node2D" parent="Node2D/Outer"]
+position = Vector2(314, 202)
+rotation = 1.5707964
+
+[node name="Name" type="Area2D" parent="Node2D/Outer/Node2D4"]
+position = Vector2(-168, -135)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Outer/Node2D4/Name"]
+position = Vector2(179.5, -222)
+shape = SubResource("RectangleShape2D_tfnpb")
+
+[connection signal="area_entered" from="Node2D/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D/Fireball" to="Node2D/Character/CharacterBody2D/Area2D" method="_on_fireball_area_entered"]
