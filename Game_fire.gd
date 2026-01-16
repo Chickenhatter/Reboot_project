@@ -1,7 +1,10 @@
 extends Area2D
+var bookholder = false
 var a = false
 var fire = false
 var sprite = true
+var e = false
+var call = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -46,7 +49,11 @@ func _physics_process(delta: float) -> void:
 		$Path2D/PathFollow2D/AnimatedSprite2D.play("No")
 	if sprite == false:
 		$"../AnimatedSprite2D".play("default")
-
+	if e == true:
+		if Input.is_action_just_pressed("ui_e"):
+			bookholder = true
+			$"../../../House/Pedestal/Pedestal".play("No Book")
+			$"../../../House/Pedestal/AnimatedSprite2D".play("Book play")
 
 func _on_fireball_area_entered(area: Area2D) -> void:
 	if area.name == "Name":
@@ -65,4 +72,25 @@ func _on_fireball_area_exited(area: Area2D) -> void:
 
 
 func _on_house_to_shrine_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body is CharacterBody2D:
+		sprite = true
+		a = false
+		if bookholder == true:
+			fire = true
+
+
+func _on_pedestal_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		e = true
+
+
+func _on_pedestal_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		e = false
+
+
+func _on_homeward_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		a = false 
+		fire = false
+		

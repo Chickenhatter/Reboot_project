@@ -3,6 +3,7 @@ extends CharacterBody2D
 var vert = false
 var four = false
 var twojump = true
+var e = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -31,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		velocity = movement * 300
 	move_and_slide()
 	if vert == true:
-		$"../../Camera/Camera2D".position = $".".position
+		$"../../Camera/Camera2D".position.y = $".".position.y
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -39,5 +40,23 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		get_tree().change_scene_to_file("res://Game.tscn")
 
 
+
+
+
+
 func _on_house_to_shrine_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body is CharacterBody2D:
+		vert = true
+		four = true
+		twojump = false
+		$".".position = Vector2(2000,0)
+		$"../../Camera/Camera2D".position = Vector2(2000,0)
+
+
+func _on_homeward_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		vert = false
+		four = false
+		twojump = true
+		$"../../Camera/Camera2D".position = Vector2(0,0)
+		$".".position = Vector2(500,0)

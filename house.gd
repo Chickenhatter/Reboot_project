@@ -19,7 +19,3 @@ func _on_rooms_body_entered(body: Node2D) -> void:
 func _on_rooms_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$"../Camera/Camera2D".position = Vector2(0,0)
-
-
-func _on_house_to_shrine_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
