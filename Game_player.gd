@@ -94,3 +94,13 @@ func _on_portalmove_body_entered(body: Node2D) -> void:
 		twojump = true
 		$".".position = Vector2(2000,-4000)
 		$"../../Camera/Camera2D".position = $".".position
+
+
+func _on_templar_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		$".".position = Vector2(-5000,-4000)
+		$"../../Camera/Camera2D".position = Vector2(-5000,-4000)
+		vert = false
+		kurt = false
+		four = true
+		twojump = false
