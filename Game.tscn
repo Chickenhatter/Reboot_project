@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://dhj5rixskpqci"]
+[gd_scene load_steps=76 format=4 uid="uid://dhj5rixskpqci"]
 
 [ext_resource type="Texture2D" uid="uid://dh7815rxyp6jy" path="res://images/New folder/Blue.png" id="1_yx171"]
 [ext_resource type="Texture2D" uid="uid://ca148l0kww2yp" path="res://images/New folder/Green.png" id="2_yhmtn"]
@@ -6125,7 +6125,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2501"]
-size = Vector2(565.5933, 136.91188)
+size = Vector2(565.5933, 236.87799)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyih5"]
 size = Vector2(1178.5, 516)
@@ -6219,6 +6219,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mevm"]
 size = Vector2(244, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wuoie"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -6334,7 +6336,7 @@ rotation = 1.5762163
 [node name="Door" type="Area2D" parent="Game/House/Node2D/Path2D/PathFollow2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/House/Node2D/Path2D/PathFollow2D/Door"]
-position = Vector2(-132.92493, -485.7236)
+position = Vector2(-132.92493, -435.74066)
 shape = SubResource("RectangleShape2D_w2501")
 
 [node name="Hard" type="TileMapLayer" parent="Game/House/Node2D/Path2D/PathFollow2D"]
@@ -6559,6 +6561,27 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/1st/ESC1"]
 position = Vector2(-10, -377)
 shape = SubResource("RectangleShape2D_0mevm")
+
+[node name="Final" type="Node2D" parent="Game"]
+
+[node name="Tileset" type="Node2D" parent="Game/Final"]
+
+[node name="Hard" type="TileMapLayer" parent="Game/Final/Tileset"]
+z_index = -20
+tile_set = SubResource("TileSet_y5ctq")
+
+[node name="Behind" type="TileMapLayer" parent="Game/Final/Tileset"]
+z_index = -10
+tile_set = SubResource("TileSet_202ut")
+
+[node name="Infront" type="TileMapLayer" parent="Game/Final/Tileset"]
+z_index = 10
+tile_set = SubResource("TileSet_7vltt")
+
+[node name="Leave" type="Area2D" parent="Game/Final"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Final/Leave"]
+shape = SubResource("CircleShape2D_wuoie")
 
 [node name="Default" type="Node2D" parent="."]
 
