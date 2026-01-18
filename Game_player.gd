@@ -98,7 +98,7 @@ func _on_portalmove_body_entered(body: Node2D) -> void:
 
 func _on_templar_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		$".".position = Vector2(-5000,-4000)
+		$".".position = Vector2(-5000,-3900)
 		$"../../Camera/Camera2D".position = Vector2(-5000,-4000)
 		vert = false
 		kurt = false
