@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 			bookholder = true
 			$"../../../House/Pedestal/Pedestal".play("No Book")
 			$"../../../House/Pedestal/AnimatedSprite2D".play("Book play")
+			$"../../../House/Node2D/Path2D/PathFollow2D".progress_ratio = 0.9999
 
 func _on_fireball_area_entered(area: Area2D) -> void:
 	if area.name == "Name":

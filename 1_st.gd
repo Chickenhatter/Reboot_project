@@ -11,20 +11,22 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if v == true:
 		if q == true:
-			if $Node2D/Path2D/PathFollow2D.progress_ratio > 0.9:
+			if $Node2D/Path2D/PathFollow2D.progress_ratio < 0.9:
 				$Node2D/Path2D/PathFollow2D.progress += 10
 
 
 func _on_esc_1_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		$"../Character/CharacterBody2D".position = Vector2()
-
+		$"../Character/CharacterBody2D".position = Vector2(-5000,-4800)
+		$"../Camera/Camera2D".position = Vector2(-5000,-5000)
 
 func _on_f_1_area_entered(area: Area2D) -> void:
 	if area.name == "Fireball":
 		v = true
+		print("v")
 
 
 func _on_f_2_area_entered(area: Area2D) -> void:
 	if area.name == "Fireball":
 		q = true
+		print("q")

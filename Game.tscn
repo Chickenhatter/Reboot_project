@@ -1,10 +1,11 @@
-[gd_scene load_steps=70 format=4 uid="uid://dhj5rixskpqci"]
+[gd_scene load_steps=75 format=4 uid="uid://dhj5rixskpqci"]
 
 [ext_resource type="Texture2D" uid="uid://dh7815rxyp6jy" path="res://images/New folder/Blue.png" id="1_yx171"]
 [ext_resource type="Texture2D" uid="uid://ca148l0kww2yp" path="res://images/New folder/Green.png" id="2_yhmtn"]
 [ext_resource type="Texture2D" uid="uid://di1ilhhk2bplm" path="res://images/New folder/Grey.jpg" id="3_gwjdr"]
 [ext_resource type="Script" uid="uid://dsmjibg8jloyo" path="res://house.gd" id="4_gwjdr"]
 [ext_resource type="Texture2D" uid="uid://ba3yggcwgbxev" path="res://images/New folder/Orange.png" id="4_lvtmh"]
+[ext_resource type="Texture2D" uid="uid://c1651ulswasw3" path="res://images/Confused.png" id="4_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://dpwfophcmtp00" path="res://images/New folder/purple.jpg" id="5_yyih5"]
 [ext_resource type="Texture2D" uid="uid://2twt2y2fgrx7" path="res://images/New folder/red.png" id="6_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://dpgcxfb1tr4cg" path="res://images/New folder/Yellow.png" id="7_elkpi"]
@@ -77,6 +78,9 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0yprl"]
+radius = 71.70077
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5dxo"]
 animations = [{
 "frames": [{
@@ -93,6 +97,25 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bvhbk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"No",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qjyg3")
+}],
+"loop": true,
+"name": &"Question",
 "speed": 5.0
 }]
 
@@ -6095,6 +6118,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Curve2D" id="Curve2D_cpsxm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 3, 0, 0, 0, 0, -5, 1110)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2501"]
+size = Vector2(565.5933, 136.91188)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yyih5"]
 size = Vector2(1178.5, 516)
 
@@ -6223,17 +6255,25 @@ rotation = -1.5707964
 [node name="Fireball" type="Area2D" parent="Game/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D/Fireball"]
-shape = SubResource("RectangleShape2D_n7324")
+shape = SubResource("CircleShape2D_0yprl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D"]
 sprite_frames = SubResource("SpriteFrames_v5dxo")
 animation = &"No"
 autoplay = "No"
 
+[node name="Spellbok" type="AnimatedSprite2D" parent="Game/Character/CharacterBody2D"]
+position = Vector2(88.000015, -74)
+scale = Vector2(0.38592592, 0.41111112)
+sprite_frames = SubResource("SpriteFrames_bvhbk")
+animation = &"Question"
+autoplay = "No"
+
 [node name="Camera" type="Node2D" parent="Game"]
 
 [node name="Camera2D" type="Camera2D" parent="Game/Camera"]
-position = Vector2(-5000, -4000)
+position = Vector2(-5000, -5000)
+offset = Vector2(-50, 0)
 
 [node name="House" type="Node2D" parent="Game"]
 script = ExtResource("4_gwjdr")
@@ -6281,6 +6321,26 @@ autoplay = "Book"
 sprite_frames = SubResource("SpriteFrames_qjyg3")
 animation = &"Book play"
 autoplay = "Book play"
+
+[node name="Node2D" type="Node2D" parent="Game/House"]
+
+[node name="Path2D" type="Path2D" parent="Game/House/Node2D"]
+curve = SubResource("Curve2D_cpsxm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Game/House/Node2D/Path2D"]
+position = Vector2(1, 3)
+rotation = 1.5762163
+
+[node name="Door" type="Area2D" parent="Game/House/Node2D/Path2D/PathFollow2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/House/Node2D/Path2D/PathFollow2D/Door"]
+position = Vector2(-132.92493, -485.7236)
+shape = SubResource("RectangleShape2D_w2501")
+
+[node name="Hard" type="TileMapLayer" parent="Game/House/Node2D/Path2D/PathFollow2D"]
+z_index = -22
+tile_map_data = PackedByteArray("AAAjAPj/AgAMAAwAAAAjAPn/AgAMAAwAAAAjAPr/AgAMAAwAAAAjAPv/AgAMAAwAAAAjAPz/AgAMAAwAAAAjAP3/AgAMAAwAAAAjAP7/AgAMAAwAAAAjAP//AgAMAAwAAAAjAAAAAgAMAAwAAAAjAAEAAgAMAAwAAAAjAAIAAgAMAAwAAAAjAAMAAgAMAAwAAAAjAAQAAgAMAAwAAAAjAAUAAgAMAAwAAAAjAAYAAgAMAAwAAAAjAAcAAgAMAAwAAAAjAAgAAgAMAAwAAAAjAAkAAgAMAAwAAAAjAAoAAgAMAAwAAAAjAAsAAgAMAAwAAAAjAAwAAgAMAAwAAAAjAA0AAgAMAAwAAAAkAPj/AgAMAAwAAAAkAPn/AgAMAAwAAAAkAPr/AgAMAAwAAAAkAPv/AgAMAAwAAAAkAPz/AgAMAAwAAAAkAP3/AgAMAAwAAAAkAP7/AgAMAAwAAAAkAP//AgAMAAwAAAAkAAAAAgAMAAwAAAAkAAEAAgAMAAwAAAAkAAIAAgAMAAwAAAAkAAMAAgAMAAwAAAAkAAQAAgAMAAwAAAAkAAUAAgAMAAwAAAAkAAYAAgAMAAwAAAAkAAcAAgAMAAwAAAAkAAgAAgAMAAwAAAAkAAkAAgAMAAwAAAAkAAoAAgAMAAwAAAAkAAsAAgAMAAwAAAAkAAwAAgAMAAwAAAAkAA0AAgAMAAwAAAAlAPj/AgAMAAwAAAAlAPn/AgAMAAwAAAAlAPr/AgAMAAwAAAAlAPv/AgAMAAwAAAAlAPz/AgAMAAwAAAAlAP3/AgAMAAwAAAAlAP7/AgAMAAwAAAAlAP//AgAMAAwAAAAlAAAAAgAMAAwAAAAlAAEAAgAMAAwAAAAlAAIAAgAMAAwAAAAlAAMAAgAMAAwAAAAlAAQAAgAMAAwAAAAlAAUAAgAMAAwAAAAlAAYAAgAMAAwAAAAlAAcAAgAMAAwAAAAlAAgAAgAMAAwAAAAlAAkAAgAMAAwAAAAlAAoAAgAMAAwAAAAlAAsAAgAMAAwAAAAlAAwAAgAMAAwAAAAlAA0AAgAMAAwAAAAmAPj/AgAMAAwAAAAmAPn/AgAMAAwAAAAmAPr/AgAMAAwAAAAmAPv/AgAMAAwAAAAmAPz/AgAMAAwAAAAmAP3/AgAMAAwAAAAmAP7/AgAMAAwAAAAmAP//AgAMAAwAAAAmAAAAAgAMAAwAAAAmAAEAAgAMAAwAAAAmAAIAAgAMAAwAAAAmAAMAAgAMAAwAAAAmAAQAAgAMAAwAAAAmAAUAAgAMAAwAAAAmAAYAAgAMAAwAAAAmAAcAAgAMAAwAAAAmAAgAAgAMAAwAAAAmAAkAAgAMAAwAAAAmAAoAAgAMAAwAAAAmAAsAAgAMAAwAAAAmAAwAAgAMAAwAAAAmAA0AAgAMAAwAAAD3/9n/AgAMAAwAAAD3/9r/AgAMAAwAAAD3/9v/AgAMAAwAAAD3/9z/AgAMAAwAAAD3/93/AgAMAAwAAAD4/9n/AgAMAAwAAAD4/9r/AgAMAAwAAAD4/9v/AgAMAAwAAAD4/9z/AgAMAAwAAAD4/93/AgAMAAwAAAD5/9n/AgAMAAwAAAD5/9r/AgAMAAwAAAD5/9v/AgAMAAwAAAD5/9z/AgAMAAwAAAD5/93/AgAMAAwAAAD6/9n/AgAMAAwAAAD6/9r/AgAMAAwAAAD6/9v/AgAMAAwAAAD6/9z/AgAMAAwAAAD6/93/AgAMAAwAAAD7/9n/AgAMAAwAAAD7/9r/AgAMAAwAAAD7/9v/AgAMAAwAAAD7/9z/AgAMAAwAAAD7/93/AgAMAAwAAAD8/9n/AgAMAAwAAAD8/9r/AgAMAAwAAAD8/9v/AgAMAAwAAAD8/9z/AgAMAAwAAAD8/93/AgAMAAwAAAD9/9n/AgAMAAwAAAD9/9r/AgAMAAwAAAD9/9v/AgAMAAwAAAD9/9z/AgAMAAwAAAD9/93/AgAMAAwAAAD+/9n/AgAMAAwAAAD+/9r/AgAMAAwAAAD+/9v/AgAMAAwAAAD+/9z/AgAMAAwAAAD+/93/AgAMAAwAAAD//9n/AgAMAAwAAAD//9r/AgAMAAwAAAD//9v/AgAMAAwAAAD//9z/AgAMAAwAAAD//93/AgAMAAwAAAAAANn/AgAMAAwAAAAAANr/AgAMAAwAAAAAANv/AgAMAAwAAAAAANz/AgAMAAwAAAAAAN3/AgAMAAwAAAABANn/AgAMAAwAAAABANr/AgAMAAwAAAABANv/AgAMAAwAAAABANz/AgAMAAwAAAABAN3/AgAMAAwAAAACANn/AgAMAAwAAAACANr/AgAMAAwAAAACANv/AgAMAAwAAAACANz/AgAMAAwAAAACAN3/AgAMAAwAAAADANn/AgAMAAwAAAADANr/AgAMAAwAAAADANv/AgAMAAwAAAADANz/AgAMAAwAAAADAN3/AgAMAAwAAAAEANn/AgAMAAwAAAAEANr/AgAMAAwAAAAEANv/AgAMAAwAAAAEANz/AgAMAAwAAAAEAN3/AgAMAAwAAAAFANn/AgAMAAwAAAAFANr/AgAMAAwAAAAFANv/AgAMAAwAAAAFANz/AgAMAAwAAAAFAN3/AgAMAAwAAAAGANn/AgAMAAwAAAAGANr/AgAMAAwAAAAGANv/AgAMAAwAAAAGANz/AgAMAAwAAAAGAN3/AgAMAAwAAAAHANn/AgAMAAwAAAAHANr/AgAMAAwAAAAHANv/AgAMAAwAAAAHANz/AgAMAAwAAAAHAN3/AgAMAAwAAAAIANn/AgAMAAwAAAAIANr/AgAMAAwAAAAIANv/AgAMAAwAAAAIANz/AgAMAAwAAAAIAN3/AgAMAAwAAAD3/97/AgAMAAwAAAD3/9//AgAMAAwAAAD3/+D/AgAMAAwAAAD4/97/AgAMAAwAAAD4/9//AgAMAAwAAAD4/+D/AgAMAAwAAAD5/97/AgAMAAwAAAD5/9//AgAMAAwAAAD5/+D/AgAMAAwAAAD6/97/AgAMAAwAAAD6/9//AgAMAAwAAAD6/+D/AgAMAAwAAAD7/97/AgAMAAwAAAD7/9//AgAMAAwAAAD7/+D/AgAMAAwAAAD8/97/AgAMAAwAAAD8/9//AgAMAAwAAAD8/+D/AgAMAAwAAAD9/97/AgAMAAwAAAD9/9//AgAMAAwAAAD9/+D/AgAMAAwAAAD+/97/AgAMAAwAAAD+/9//AgAMAAwAAAD+/+D/AgAMAAwAAAD//97/AgAMAAwAAAD//9//AgAMAAwAAAD//+D/AgAMAAwAAAAAAN7/AgAMAAwAAAAAAN//AgAMAAwAAAAAAOD/AgAMAAwAAAABAN7/AgAMAAwAAAABAN//AgAMAAwAAAABAOD/AgAMAAwAAAACAN7/AgAMAAwAAAACAN//AgAMAAwAAAACAOD/AgAMAAwAAAADAN7/AgAMAAwAAAADAN//AgAMAAwAAAADAOD/AgAMAAwAAAAEAN7/AgAMAAwAAAAEAN//AgAMAAwAAAAEAOD/AgAMAAwAAAAFAN7/AgAMAAwAAAAFAN//AgAMAAwAAAAFAOD/AgAMAAwAAAAGAN7/AgAMAAwAAAAGAN//AgAMAAwAAAAGAOD/AgAMAAwAAAAHAN7/AgAMAAwAAAAHAN//AgAMAAwAAAAHAOD/AgAMAAwAAAAIAN7/AgAMAAwAAAAIAN//AgAMAAwAAAAIAOD/AgAMAAwAAAA=")
+tile_set = SubResource("TileSet_y5ctq")
 
 [node name="HtoS" type="Node2D" parent="Game"]
 script = ExtResource("13_lvtmh")
@@ -6526,6 +6586,8 @@ tile_set = SubResource("TileSet_7vltt")
 [connection signal="body_entered" from="Game/House/Pedestal" to="Game/Character/CharacterBody2D/Area2D" method="_on_pedestal_body_entered"]
 [connection signal="body_exited" from="Game/House/Pedestal" to="Game/Character/CharacterBody2D" method="_on_pedestal_body_exited"]
 [connection signal="body_exited" from="Game/House/Pedestal" to="Game/Character/CharacterBody2D/Area2D" method="_on_pedestal_body_exited"]
+[connection signal="body_entered" from="Game/House/Node2D/Path2D/PathFollow2D/Door" to="Game/House" method="_on_door_body_entered"]
+[connection signal="body_exited" from="Game/House/Node2D/Path2D/PathFollow2D/Door" to="Game/House" method="_on_door_body_exited"]
 [connection signal="body_entered" from="Game/HtoS/Homeward" to="Game/Character/CharacterBody2D" method="_on_homeward_body_entered"]
 [connection signal="body_entered" from="Game/HtoS/Homeward" to="Game/Character/CharacterBody2D/Area2D" method="_on_homeward_body_entered"]
 [connection signal="body_entered" from="Game/HtoS/Portal" to="Game/Character/CharacterBody2D" method="_on_portal_body_entered"]

@@ -19,3 +19,13 @@ func _on_rooms_body_entered(body: Node2D) -> void:
 func _on_rooms_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$"../Camera/Camera2D".position = Vector2(0,0)
+
+
+func _on_door_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		$"../Character/CharacterBody2D/Spellbok".play("Question")
+
+
+func _on_door_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		$"../Character/CharacterBody2D/Spellbok".play("No")
