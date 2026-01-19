@@ -104,3 +104,22 @@ func _on_templar_body_entered(body: Node2D) -> void:
 		kurt = false
 		four = true
 		twojump = false
+
+
+func _on_camera_follow_2_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		kurt = true
+
+
+func _on_camera_follow_2_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		kurt = false
+
+func _on_camera_followers_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		vert = true
+
+
+func _on_camera_followers_body_exited(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		vert = false
