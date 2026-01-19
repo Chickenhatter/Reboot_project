@@ -1,8 +1,12 @@
-[gd_scene load_steps=94 format=4 uid="uid://dhj5rixskpqci"]
+[gd_scene load_steps=118 format=4 uid="uid://dhj5rixskpqci"]
 
 [ext_resource type="Texture2D" uid="uid://dh7815rxyp6jy" path="res://images/New folder/Blue.png" id="1_yx171"]
+[ext_resource type="Texture2D" uid="uid://tt3qvdbp4n00" path="res://images/Images/L.png" id="2_cpsxm"]
+[ext_resource type="Texture2D" uid="uid://cih6wefew0c6c" path="res://images/Images/R.png" id="2_hmewc"]
 [ext_resource type="Texture2D" uid="uid://ca148l0kww2yp" path="res://images/New folder/Green.png" id="2_yhmtn"]
 [ext_resource type="Texture2D" uid="uid://di1ilhhk2bplm" path="res://images/New folder/Grey.jpg" id="3_gwjdr"]
+[ext_resource type="Texture2D" uid="uid://bc6swwmfk5xwu" path="res://images/Images/B.png" id="3_hmewc"]
+[ext_resource type="Texture2D" uid="uid://dyde1wr8latd" path="res://images/Images/F.png" id="4_7ged1"]
 [ext_resource type="Script" uid="uid://dsmjibg8jloyo" path="res://house.gd" id="4_gwjdr"]
 [ext_resource type="Texture2D" uid="uid://ba3yggcwgbxev" path="res://images/New folder/Orange.png" id="4_lvtmh"]
 [ext_resource type="Texture2D" uid="uid://c1651ulswasw3" path="res://images/Confused.png" id="4_qjyg3"]
@@ -17,18 +21,42 @@
 [ext_resource type="Script" uid="uid://b1xabiu86317y" path="res://1_st.gd" id="14_yyih5"]
 [ext_resource type="Script" uid="uid://bdj5auvyb2mli" path="res://final.gd" id="16_elkpi"]
 [ext_resource type="Script" uid="uid://dt8dp6hkqkub8" path="res://large.gd" id="17_0yprl"]
+[ext_resource type="Texture2D" uid="uid://c4ii4cbgn11d3" path="res://images/Images/A2.png" id="18_202ut"]
+[ext_resource type="Texture2D" uid="uid://2yncwgkpj1r7" path="res://images/Images/A1.png" id="19_5he1h"]
+[ext_resource type="Texture2D" uid="uid://cfedsf3orfwuh" path="res://images/Images/CIRCLE1.png" id="19_8ktx7"]
+[ext_resource type="Texture2D" uid="uid://cae31cjo17no8" path="res://images/Images/CIRCLE2.png" id="20_hwsgv"]
+[ext_resource type="Texture2D" uid="uid://cuabidkokfq46" path="res://images/Images/A3.png" id="20_xwkxq"]
+[ext_resource type="Texture2D" uid="uid://cxx4b36laflmd" path="res://images/Images/CIRCLE3.png" id="21_gebyw"]
+[ext_resource type="Texture2D" uid="uid://d2l041apmp4x4" path="res://images/Images/A4.png" id="21_wdm1y"]
+[ext_resource type="Texture2D" uid="uid://mfa4f3evb22s" path="res://images/Images/CIRCLE4.png" id="22_4my3f"]
+[ext_resource type="Texture2D" uid="uid://bdoi53dvorl2o" path="res://images/Images/CIRCLE5.png" id="23_aeq37"]
+[ext_resource type="Texture2D" uid="uid://rv6klnq7y130" path="res://images/Images/CIRCLE6.png" id="24_suycs"]
+[ext_resource type="Texture2D" uid="uid://cyqmly8r63m03" path="res://images/Images/CIRCLE7.png" id="25_202ut"]
+[ext_resource type="Texture2D" uid="uid://dye2ybacgri4x" path="res://images/Images/CIRCLE 8.png" id="26_5he1h"]
+[ext_resource type="Script" uid="uid://dtgdeq2ioxnuw" path="res://to_temple.gd" id="27_gebyw"]
+[ext_resource type="Texture2D" uid="uid://d1hs1ydm8u50l" path="res://images/Images/CIRCLE 9.png" id="28_4my3f"]
+[ext_resource type="Texture2D" uid="uid://thdc6omumepb" path="res://images/Images/FIRE1.png" id="34_hxy8k"]
+[ext_resource type="Texture2D" uid="uid://bgombqep7bdlv" path="res://images/Images/FIRE2.png" id="35_2t1a5"]
+[ext_resource type="Texture2D" uid="uid://dt42gmuhdanpk" path="res://images/Images/FIRE3.png" id="36_8576b"]
+[ext_resource type="Texture2D" uid="uid://dwnwayd1orjq3" path="res://images/Images/FIREN.png" id="37_68r7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj2yu"]
-size = Vector2(72, 71)
+size = Vector2(111, 138)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iueff"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hmewc")
+}],
 "loop": true,
 "name": &"E",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hmewc")
+}],
 "loop": true,
 "name": &"N",
 "speed": 5.0
@@ -43,7 +71,10 @@ animations = [{
 "name": &"NW",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7ged1")
+}],
 "loop": true,
 "name": &"S",
 "speed": 5.0
@@ -58,7 +89,10 @@ animations = [{
 "name": &"SW",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cpsxm")
+}],
 "loop": true,
 "name": &"W",
 "speed": 5.0
@@ -6093,12 +6127,18 @@ radius = 160.00313
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yyih5"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_202ut")
+}],
 "loop": true,
 "name": &"Book",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_5he1h")
+}],
 "loop": true,
 "name": &"No Book",
 "speed": 5.0
@@ -6106,10 +6146,28 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qjyg3"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_xwkxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wdm1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xwkxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wdm1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_xwkxq")
+}, {
+"duration": 1.0,
+"texture": null
+}],
 "loop": false,
 "name": &"Book play",
-"speed": 1.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -6151,16 +6209,49 @@ radius = 210.02142
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("19_8ktx7")
 }],
 "loop": true,
 "name": &"N",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_8ktx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8ktx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_8ktx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hwsgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gebyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_4my3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_aeq37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_suycs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_202ut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5he1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5he1h")
+}],
 "loop": true,
 "name": &"Portal",
-"speed": 1.0
+"speed": 4.0
 }]
 
 [sub_resource type="Curve2D" id="Curve2D_0yprl"]
@@ -6181,6 +6272,38 @@ size = Vector2(6526.5, 237)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ged1"]
 size = Vector2(209, 950)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeq37"]
+size = Vector2(262, 131)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suycs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_4my3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4my3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4my3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4my3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4my3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_4my3f")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="Curve2D" id="Curve2D_lvtmh"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2, 2, 0, 0, 0, 0, 1171, 4)
@@ -6192,12 +6315,27 @@ radius = 73.02739
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0yprl"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_hxy8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2t1a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hxy8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8576b")
+}],
 "loop": true,
 "name": &"Fire",
-"speed": 5.0
+"speed": 4.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_68r7h")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -6208,12 +6346,27 @@ radius = 72.1734
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wuoie"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_hxy8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2t1a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hxy8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8576b")
+}],
 "loop": true,
 "name": &"Fire",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_68r7h")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -6327,13 +6480,15 @@ radius = 350.1214
 script = ExtResource("8_yx171")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Character/CharacterBody2D"]
-position = Vector2(-1, -0.5)
+position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_fj2yu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game/Character/CharacterBody2D"]
-position = Vector2(-1.0000057, 0)
-scale = Vector2(0.5703125, 0.5546875)
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="Game/Character/CharacterBody2D"]
+z_index = 1
+position = Vector2(11.5, -10.499996)
+scale = Vector2(2.15, 2.2900002)
 sprite_frames = SubResource("SpriteFrames_iueff")
+animation = &"N"
 autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="Game/Character/CharacterBody2D"]
@@ -6409,14 +6564,18 @@ position = Vector2(-1522, 50)
 shape = SubResource("CircleShape2D_lvtmh")
 
 [node name="Pedestal" type="AnimatedSprite2D" parent="Game/House/Pedestal"]
+position = Vector2(-1618.9999, 19)
+scale = Vector2(3.2099993, 3.09)
 sprite_frames = SubResource("SpriteFrames_yyih5")
-animation = &"No Book"
+animation = &"Book"
 autoplay = "Book"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game/House/Pedestal"]
+position = Vector2(-1434.9999, -134.00002)
+scale = Vector2(1.23, 1.58)
 sprite_frames = SubResource("SpriteFrames_qjyg3")
 animation = &"Book play"
-autoplay = "Book play"
+autoplay = "new_animation"
 
 [node name="Node2D" type="Node2D" parent="Game/House"]
 
@@ -6503,8 +6662,10 @@ position = Vector2(1999, -1980)
 shape = SubResource("CircleShape2D_yyih5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game/HtoS/Portal"]
+position = Vector2(18, 12)
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_elkpi")
-animation = &"N"
+animation = &"Portal"
 autoplay = "N"
 
 [node name="Path2D" type="Path2D" parent="Game/HtoS/Portal"]
@@ -6531,6 +6692,7 @@ texture = ExtResource("2_yhmtn")
 
 [node name="To Temple" type="Node2D" parent="Game"]
 position = Vector2(2000, -4000)
+script = ExtResource("27_gebyw")
 
 [node name="Tileset" type="Node2D" parent="Game/To Temple"]
 
@@ -6595,7 +6757,20 @@ position = Vector2(-1936.25, 353)
 shape = SubResource("RectangleShape2D_hmewc")
 
 [node name="Node2D2" type="Node2D" parent="Game/To Temple"]
-position = Vector2(-3520, -147)
+position = Vector2(-13, -7)
+
+[node name="pORTALHS" type="Area2D" parent="Game/To Temple/Node2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/To Temple/Node2D2/pORTALHS"]
+position = Vector2(9, -208)
+shape = SubResource("RectangleShape2D_aeq37")
+
+[node name="Beam of light" type="AnimatedSprite2D" parent="Game/To Temple/Node2D2"]
+z_index = 10
+position = Vector2(-6.0000153, -128.99998)
+scale = Vector2(7.6, 6.2600007)
+sprite_frames = SubResource("SpriteFrames_suycs")
+autoplay = "default"
 
 [node name="1st" type="Node2D" parent="Game"]
 position = Vector2(-5000, -4000)
@@ -6640,7 +6815,10 @@ position = Vector2(-422, -235)
 shape = SubResource("CircleShape2D_qjyg3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game/1st/Node2D2/F1"]
+position = Vector2(-418, -240)
+scale = Vector2(1.94, 1.87)
 sprite_frames = SubResource("SpriteFrames_0yprl")
+animation = &"Fire"
 autoplay = "default"
 
 [node name="F2" type="Area2D" parent="Game/1st/Node2D2"]
@@ -6650,7 +6828,10 @@ position = Vector2(415, -228)
 shape = SubResource("CircleShape2D_elkpi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game/1st/Node2D2/F2"]
+position = Vector2(416, -237)
+scale = Vector2(2.13, 1.87)
 sprite_frames = SubResource("SpriteFrames_wuoie")
+animation = &"Fire"
 autoplay = "default"
 
 [node name="ESC1" type="Area2D" parent="Game/1st"]
@@ -6857,6 +7038,7 @@ tile_set = SubResource("TileSet_7vltt")
 [connection signal="body_exited" from="Game/HtoS/Portal" to="Game/Character/CharacterBody2D" method="_on_portal_body_exited"]
 [connection signal="body_entered" from="Game/HtoS/Portal/Path2D/PathFollow2D/Portalmove" to="Game/Character/CharacterBody2D" method="_on_portalmove_body_entered"]
 [connection signal="body_entered" from="Game/To Temple/Templar" to="Game/Character/CharacterBody2D" method="_on_templar_body_entered"]
+[connection signal="body_entered" from="Game/To Temple/Node2D2/pORTALHS" to="Game/To Temple" method="_on_p_ortalhs_body_entered"]
 [connection signal="area_entered" from="Game/1st/Node2D2/F1" to="Game/1st" method="_on_f_1_area_entered"]
 [connection signal="area_entered" from="Game/1st/Node2D2/F2" to="Game/1st" method="_on_f_2_area_entered"]
 [connection signal="body_entered" from="Game/1st/ESC1" to="Game/1st" method="_on_esc_1_body_entered"]

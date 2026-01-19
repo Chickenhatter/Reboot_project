@@ -19,6 +19,10 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_w") and is_on_floor():
 			velocity.y = JUMP_VELOCITY*1
 		var direction := Input.get_axis("ui_a", "ui_d")
+		if Input.is_action_pressed("ui_d"):
+			$CharacterSprite.play("E")
+		if Input.is_action_pressed("ui_a"):
+			$CharacterSprite.play("W")
 		if direction:
 			velocity.x = direction * SPEED
 		else:
@@ -26,12 +30,16 @@ func _physics_process(delta: float) -> void:
 	if four == true:
 		if Input.is_action_pressed("ui_w"):
 			movement.y -= 1
+			$CharacterSprite.play("N")
 		if Input.is_action_pressed("ui_d"):
 			movement.x += 1
+			$CharacterSprite.play("E")
 		if Input.is_action_pressed("ui_s"):
 			movement.y += 1
+			$CharacterSprite.play("S")
 		if Input.is_action_pressed("ui_a"):
 			movement.x -= 1
+			$CharacterSprite.play("W")
 		velocity = movement * 300
 	move_and_slide()
 	if vert == true:
@@ -92,7 +100,7 @@ func _on_portalmove_body_entered(body: Node2D) -> void:
 		kurt = true
 		four = false
 		twojump = true
-		$".".position = Vector2(2000,-4000)
+		$".".position = Vector2(2000,-4100)
 		$"../../Camera/Camera2D".position = $".".position
 
 

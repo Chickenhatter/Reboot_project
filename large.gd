@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 func _on_chicken_area_entered(area: Area2D) -> void:
 	if area.name == "Fireball":
 		chickensthere = chickensthere + 1
+		print("Chicken")
 
 
 func _on_hiddenfire_area_entered(area: Area2D) -> void:
@@ -31,3 +32,4 @@ func _on_hiddenfire_area_entered(area: Area2D) -> void:
 		$"Small flame/Hiddenfire/HideFlame".play("On")
 		Hidden = true
 		print("Hidden")
+		
