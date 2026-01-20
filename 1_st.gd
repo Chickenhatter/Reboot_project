@@ -24,7 +24,7 @@ func _on_f_1_area_entered(area: Area2D) -> void:
 	if area.name == "Fireball":
 		v = true
 		print("v")
-		$Node2D2/F2/AnimatedSprite2D.play("Fire")
+		$Node2D2/F1/AnimatedSprite2D.play("Fire")
 
 
 func _on_f_2_area_entered(area: Area2D) -> void:

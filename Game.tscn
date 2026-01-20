@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://dhj5rixskpqci"]
+[gd_scene load_steps=126 format=4 uid="uid://dhj5rixskpqci"]
 
 [ext_resource type="Texture2D" uid="uid://dh7815rxyp6jy" path="res://images/New folder/Blue.png" id="1_yx171"]
 [ext_resource type="Texture2D" uid="uid://tt3qvdbp4n00" path="res://images/Images/L.png" id="2_cpsxm"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dpwfophcmtp00" path="res://images/New folder/purple.jpg" id="5_yyih5"]
 [ext_resource type="Texture2D" uid="uid://2twt2y2fgrx7" path="res://images/New folder/red.png" id="6_qjyg3"]
 [ext_resource type="Texture2D" uid="uid://dpgcxfb1tr4cg" path="res://images/New folder/Yellow.png" id="7_elkpi"]
+[ext_resource type="Texture2D" uid="uid://nay3c4db7hft" path="res://images/Images/FIREBALL.png" id="8_68r7h"]
 [ext_resource type="Script" uid="uid://x3lstnnxbwby" path="res://Game_player.gd" id="8_yx171"]
 [ext_resource type="Texture2D" uid="uid://7wqkadpdnhdh" path="res://icon.svg" id="9_wuoie"]
 [ext_resource type="Script" uid="uid://d2lyfhynld43e" path="res://Game_fire.gd" id="10_yx171"]
@@ -39,6 +40,12 @@
 [ext_resource type="Texture2D" uid="uid://bgombqep7bdlv" path="res://images/Images/FIRE2.png" id="35_2t1a5"]
 [ext_resource type="Texture2D" uid="uid://dt42gmuhdanpk" path="res://images/Images/FIRE3.png" id="36_8576b"]
 [ext_resource type="Texture2D" uid="uid://dwnwayd1orjq3" path="res://images/Images/FIREN.png" id="37_68r7h"]
+[ext_resource type="Texture2D" uid="uid://84lh5mk7eghq" path="res://images/Images/ENDBALL.png" id="39_8576b"]
+[ext_resource type="Texture2D" uid="uid://cnnq7ob1rce6d" path="res://images/Images/STAFF.png" id="40_68r7h"]
+[ext_resource type="Texture2D" uid="uid://df270r53qmppf" path="res://images/Images/P2.png" id="43_iueff"]
+[ext_resource type="Texture2D" uid="uid://dxpdbucbqnd86" path="res://images/Images/P3.png" id="44_n7324"]
+[ext_resource type="Texture2D" uid="uid://b1yoxefx44sdw" path="res://images/Images/P1.png" id="45_o6tbt"]
+[ext_resource type="Texture2D" uid="uid://w08w8sttx6ln" path="res://images/Images/TNT.png" id="46_n7324"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj2yu"]
 size = Vector2(111, 138)
@@ -129,7 +136,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_wuoie")
+"texture": ExtResource("8_68r7h")
 }],
 "loop": true,
 "name": &"default",
@@ -6391,7 +6398,10 @@ size = Vector2(288, 973)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cpsxm"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_8576b")
+}],
 "loop": true,
 "name": &"White",
 "speed": 5.0
@@ -6421,22 +6431,34 @@ size = Vector2(20, 460)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hmewc"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_iueff")
+}],
 "loop": true,
 "name": &"Almost",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_n7324")
+}],
 "loop": true,
 "name": &"Done",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_o6tbt")
+}],
 "loop": true,
 "name": &"First",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_iueff")
+}],
 "loop": true,
 "name": &"Undercook",
 "speed": 5.0
@@ -6447,15 +6469,30 @@ radius = 74.06078
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7ged1"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_68r7h")
+}],
 "loop": true,
 "name": &"Off",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_hxy8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_2t1a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hxy8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8576b")
+}],
 "loop": true,
 "name": &"On",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5ctq"]
@@ -6469,6 +6506,25 @@ point_count = 2
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8ktx7"]
 radius = 350.1214
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6tbt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"No",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_n7324")
+}],
+"loop": true,
+"name": &"Yes",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 
@@ -6510,8 +6566,10 @@ rotation = -1.5707964
 shape = SubResource("CircleShape2D_0yprl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Game/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D"]
+position = Vector2(11.000002, 9.5)
+rotation = 1.5707964
+scale = Vector2(2.18, 2.3100002)
 sprite_frames = SubResource("SpriteFrames_v5dxo")
-animation = &"No"
 autoplay = "No"
 
 [node name="Spellbok" type="AnimatedSprite2D" parent="Game/Character/CharacterBody2D"]
@@ -6906,6 +6964,13 @@ sprite_frames = SubResource("SpriteFrames_cpsxm")
 animation = &"White"
 autoplay = "default"
 
+[node name="Sprite2D" type="Sprite2D" parent="Game/Final/Area2D"]
+
+[node name="Staff" type="Sprite2D" parent="Game/Final/Area2D"]
+position = Vector2(-6, 59)
+scale = Vector2(2.47, 2.77)
+texture = ExtResource("40_68r7h")
+
 [node name="Leave" type="Area2D" parent="Game/Final"]
 position = Vector2(-3503, -2216)
 
@@ -6955,12 +7020,28 @@ shape = SubResource("RectangleShape2D_bisgb")
 [node name="Chicken" type="Area2D" parent="Game/Large/Chicken"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Large/Chicken/Chicken"]
-position = Vector2(-1205, -1296)
+position = Vector2(-902, -986)
 shape = SubResource("RectangleShape2D_w7ht3")
 
 [node name="Chicken" type="AnimatedSprite2D" parent="Game/Large/Chicken/Chicken"]
+position = Vector2(-880.00006, -978.00024)
+scale = Vector2(3.3800025, 5.5400047)
 sprite_frames = SubResource("SpriteFrames_hmewc")
-animation = &"Done"
+animation = &"Undercook"
+
+[node name="Chicken2" type="Area2D" parent="Game/Large/Chicken"]
+position = Vector2(-990, -1968)
+rotation = 3.1415927
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Large/Chicken/Chicken2"]
+position = Vector2(-902, -986)
+shape = SubResource("RectangleShape2D_w7ht3")
+
+[node name="Chicken" type="AnimatedSprite2D" parent="Game/Large/Chicken/Chicken2"]
+position = Vector2(-880.00006, -978.00024)
+scale = Vector2(3.3800025, 5.5400047)
+sprite_frames = SubResource("SpriteFrames_hmewc")
+animation = &"Undercook"
 
 [node name="Small flame" type="Node2D" parent="Game/Large"]
 
@@ -6972,7 +7053,7 @@ shape = SubResource("CircleShape2D_hmewc")
 
 [node name="HideFlame" type="AnimatedSprite2D" parent="Game/Large/Small flame/Hiddenfire"]
 sprite_frames = SubResource("SpriteFrames_7ged1")
-animation = &"Off"
+animation = &"On"
 autoplay = "Off"
 
 [node name="Door" type="Node2D" parent="Game/Large"]
@@ -7001,8 +7082,43 @@ z_index = -20
 tile_map_data = PackedByteArray("AAD5/+7/AgAIAAwAAAD4/+7/AgAMAAsAAAD3/+//AgAIAAkAAAD2/+//AgAMAAkAAAD1//D/AgAMAAwAAAD0//D/AgAJAAsAAADz//D/AgAJAAwAAADy//H/AgAIAAwAAADx//H/AgAHAAgAAADw//L/AgAHAAkAAADv//L/AgAJAAcAAADv//P/AgAIAAgAAADv//T/AgAIAAwAAADu//X/AgAHAAoAAADu//b/AgAJAAcAAADu//f/AgAKAAoAAADu//j/AgAKAAkAAADt//n/AgAIAAsAAADt//r/AgAMAAwAAADt//v/AgALAAsAAADt//z/AgAMAAsAAADs//3/AgAHAAwAAADs//7/AgALAAcAAADs////AgALAAsAAADs/wAAAgAJAAwAAADs/wEAAgALAAsAAADs/wIAAgAHAAcAAADt/wMAAgALAAcAAADt/wQAAgAIAAsAAADt/wUAAgAHAAgAAADt/wYAAgAIAAoAAADt/wcAAgAMAAgAAADt/wgAAgAKAAcAAADu/wkAAgAIAAwAAADu/woAAgAKAAsAAADu/wsAAgAIAAgAAADv/wwAAgAKAAoAAADw/w0AAgAIAAsAAADx/w0AAgAKAAgAAADy/w4AAgAHAAwAAADz/w8AAgAKAAoAAAD0/xAAAgAJAAgAAAD1/xEAAgALAAwAAAD2/xIAAgAHAAwAAAD3/xIAAgAJAAsAAAD4/xMAAgAKAAgAAAD5/xQAAgAIAAkAAADx//r/AgAHAAcAAADx//n/AgAKAAcAAADx//j/AgALAAkAAADx//f/AgAHAAoAAADx//b/AgAMAAwAAADx//X/AgAMAAsAAADx//T/AgALAAcAAADx//P/AgAKAAwAAADx//L/AgAMAAcAAADy//L/AgAMAAcAAADy//P/AgALAAcAAADy//T/AgAHAAkAAADy//X/AgAJAAwAAADy//b/AgAHAAgAAADy//f/AgAJAAkAAADy//j/AgAKAAsAAADy//n/AgALAAsAAADy//r/AgAJAAsAAADy//v/AgALAAsAAADx//v/AgALAAcAAADw//v/AgAJAAwAAADw//r/AgAHAAgAAADw//n/AgALAAoAAADw//j/AgAKAAkAAADw//f/AgAMAAcAAADw//b/AgALAAsAAADw//X/AgAJAAgAAADw//T/AgAJAAoAAADw//P/AgAMAAwAAADv//X/AgAMAAwAAADv//b/AgAMAAsAAADv//f/AgALAAoAAADv//j/AgALAAwAAADv//n/AgAKAAcAAADu//n/AgAKAAoAAADu//r/AgAKAAoAAADu//v/AgAMAAgAAADu//z/AgALAAkAAADu//3/AgAJAAoAAADt//3/AgAJAAkAAADt//7/AgALAAoAAADt////AgAMAAkAAADt/wAAAgAHAAoAAADt/wEAAgAHAAkAAADt/wIAAgAIAAsAAADu/wIAAgAJAAgAAADu/wEAAgAKAAgAAADu/wAAAgAIAAkAAADu////AgALAAcAAADu//7/AgAIAAcAAADv//7/AgALAAkAAADv//3/AgAMAAgAAADv//z/AgAJAAwAAADv//v/AgAKAAcAAADv//r/AgAHAAoAAADw//z/AgAMAAoAAADw//3/AgAIAAcAAADw//7/AgAMAAwAAADw////AgAJAAgAAADv////AgAMAAoAAADv/wAAAgAKAAkAAADv/wEAAgAHAAcAAADv/wIAAgALAAwAAADv/wMAAgAIAAgAAADu/wMAAgALAAoAAADu/wQAAgAMAAsAAADu/wUAAgAKAAoAAADu/wYAAgAIAAcAAADu/wcAAgAJAAsAAADu/wgAAgAKAAgAAADv/wgAAgAIAAoAAADv/wcAAgAIAAgAAADv/wYAAgAMAAgAAADv/wUAAgAHAAoAAADv/wQAAgAKAAoAAADw/wQAAgAIAAsAAADw/wMAAgAMAAsAAADw/wIAAgALAAsAAADw/wEAAgAIAAoAAADw/wAAAgAKAAgAAADx/wAAAgAMAAwAAADx////AgAMAAkAAADx//7/AgAMAAsAAADx//3/AgAKAAcAAADx//z/AgAIAAkAAADy//z/AgALAAwAAADy//3/AgALAAsAAADy//7/AgAHAAsAAADy////AgAMAAcAAADy/wAAAgALAAoAAADy/wEAAgALAAcAAADx/wEAAgALAAoAAADx/wIAAgAMAAsAAADx/wMAAgAHAAoAAADx/wQAAgAJAAwAAADx/wUAAgAMAAgAAADw/wUAAgALAAsAAADw/wYAAgAMAAkAAADw/wcAAgAHAAsAAADw/wgAAgAHAAoAAADw/wkAAgALAAwAAADv/wkAAgALAAwAAADv/woAAgALAAoAAADv/wsAAgAKAAsAAADw/wsAAgAMAAgAAADw/woAAgALAAwAAADx/woAAgAIAAcAAADx/wkAAgAHAAcAAADx/wgAAgAJAAkAAADx/wcAAgAMAAkAAADx/wYAAgAKAAwAAADy/wYAAgAIAAwAAADy/wUAAgALAAcAAADy/wQAAgAKAAkAAADy/wMAAgAIAAwAAADy/wIAAgAIAAcAAADz/wIAAgAIAAoAAADz/wEAAgALAAgAAADz/wAAAgAHAAwAAADz////AgALAAkAAADz//7/AgAHAAoAAADz//3/AgAHAAwAAADz//z/AgAHAAkAAADz//v/AgAKAAsAAADz//r/AgAKAAgAAADz//n/AgAKAAoAAADz//j/AgAHAAwAAADz//f/AgAMAAkAAADz//b/AgAJAAkAAADz//X/AgAHAAkAAADz//T/AgAJAAkAAADz//P/AgAMAAsAAADz//L/AgALAAoAAADz//H/AgAKAAcAAAD0//H/AgAMAAgAAAD0//L/AgAMAAsAAAD0//P/AgAHAAwAAAD0//T/AgALAAoAAAD0//X/AgAHAAwAAAD0//b/AgAKAAcAAAD0//f/AgAKAAwAAAD0//j/AgALAAsAAAD0//n/AgAKAAsAAAD0//r/AgALAAwAAAD0//v/AgAJAAcAAAD0//z/AgAIAAsAAAD0//3/AgAHAAkAAAD0//7/AgAMAAsAAAD0////AgALAAoAAAD0/wAAAgAIAAkAAAD0/wEAAgALAAoAAAD0/wIAAgAIAAsAAAD0/wMAAgAMAAsAAADz/wMAAgAKAAgAAADz/wQAAgAMAAcAAADz/wUAAgALAAcAAADz/wYAAgAMAAoAAADz/wcAAgAHAAgAAADy/wcAAgAKAAgAAADy/wgAAgAIAAsAAADy/wkAAgAMAAsAAADy/woAAgAKAAwAAADy/wsAAgAJAAsAAADx/wsAAgAJAAwAAADx/wwAAgAIAAkAAADw/wwAAgAMAAgAAADy/wwAAgAMAAwAAADy/w0AAgAHAAwAAADz/w0AAgAJAAwAAADz/wwAAgAIAAkAAADz/wsAAgAHAAsAAADz/woAAgALAAkAAADz/wkAAgAIAAgAAADz/wgAAgAHAAwAAAD0/wgAAgAJAAwAAAD0/wcAAgAHAAkAAAD0/wYAAgAJAAgAAAD0/wUAAgAKAAkAAAD0/wQAAgAIAAoAAAD1/wQAAgAKAAgAAAD1/wMAAgALAAwAAAD1/wIAAgALAAcAAAD1/wEAAgALAAgAAAD1/wAAAgAKAAsAAAD1////AgAMAAkAAAD1//7/AgAHAAoAAAD1//3/AgAIAAkAAAD1//z/AgAMAAgAAAD1//v/AgAKAAsAAAD1//r/AgAHAAgAAAD1//n/AgAMAAwAAAD1//j/AgAIAAgAAAD1//f/AgAIAAoAAAD1//b/AgAHAAsAAAD1//X/AgAHAAsAAAD1//T/AgAIAAcAAAD1//P/AgALAAwAAAD1//L/AgAHAAwAAAD1//H/AgAMAAsAAAD2//H/AgAMAAsAAAD2//D/AgAKAAgAAAD3//D/AgAHAAwAAAD3//H/AgAMAAcAAAD3//L/AgAJAAcAAAD2//L/AgALAAgAAAD2//P/AgAMAAkAAAD2//T/AgAMAAwAAAD2//X/AgAJAAsAAAD2//b/AgALAAgAAAD2//f/AgAMAAkAAAD2//j/AgAKAAgAAAD2//n/AgAHAAkAAAD2//r/AgAMAAcAAAD2//v/AgAJAAwAAAD2//z/AgAIAAkAAAD2//3/AgAHAAwAAAD2//7/AgAJAAoAAAD2////AgAJAAsAAAD2/wAAAgALAAkAAAD2/wEAAgAKAAoAAAD2/wIAAgAMAAkAAAD2/wMAAgAIAAkAAAD2/wQAAgALAAgAAAD2/wUAAgAIAAwAAAD1/wUAAgAHAAkAAAD1/wYAAgAHAAcAAAD1/wcAAgAHAAkAAAD1/wgAAgALAAsAAAD1/wkAAgAHAAkAAAD0/wkAAgAIAAsAAAD0/woAAgAJAAoAAAD0/wsAAgALAAsAAAD0/wwAAgALAAsAAAD0/w0AAgAIAAwAAAD0/w4AAgAKAAcAAADz/w4AAgAMAAgAAAD0/w8AAgALAAwAAAD1/w8AAgAHAAcAAAD1/w4AAgALAAcAAAD1/w0AAgAHAAkAAAD1/wwAAgAIAAkAAAD1/wsAAgALAAoAAAD1/woAAgAKAAsAAAD2/woAAgAJAAwAAAD2/wkAAgAMAAcAAAD2/wgAAgALAAsAAAD2/wcAAgAIAAcAAAD2/wYAAgAHAAgAAAD3/wYAAgAJAAgAAAD3/wUAAgAKAAoAAAD3/wQAAgAMAAkAAAD3/wMAAgALAAwAAAD3/wIAAgAKAAwAAAD3/wEAAgAJAAoAAAD3/wAAAgALAAsAAAD3////AgAIAAwAAAD3//7/AgAIAAcAAAD3//3/AgALAAkAAAD3//z/AgAKAAoAAAD3//v/AgALAAsAAAD3//r/AgAHAAcAAAD3//n/AgAIAAkAAAD3//j/AgAHAAcAAAD3//f/AgAMAAwAAAD3//b/AgAJAAkAAAD3//X/AgAHAAkAAAD3//T/AgAIAAwAAAD3//P/AgAIAAsAAAD4//P/AgAHAAcAAAD4//L/AgAMAAwAAAD4//H/AgALAAkAAAD4//D/AgAKAAwAAAD4/+//AgAIAAgAAAD5/+//AgAKAAwAAAD5//D/AgALAAsAAAD5//H/AgAJAAcAAAD5//L/AgAHAAcAAAD5//P/AgAKAAkAAAD5//T/AgAKAAgAAAD4//T/AgAKAAwAAAD4//X/AgAMAAwAAAD4//b/AgAMAAsAAAD4//f/AgAJAAgAAAD4//j/AgAMAAkAAAD4//n/AgAMAAsAAAD4//r/AgALAAsAAAD4//v/AgAMAAkAAAD4//z/AgALAAcAAAD4//3/AgAJAAwAAAD4//7/AgAHAAcAAAD4////AgAHAAsAAAD4/wAAAgAMAAcAAAD4/wEAAgAJAAcAAAD4/wIAAgAHAAcAAAD4/wMAAgAMAAgAAAD4/wQAAgAHAAsAAAD4/wUAAgAIAAcAAAD4/wYAAgAMAAoAAAD4/wcAAgAHAAsAAAD3/wcAAgALAAsAAAD3/wgAAgAKAAkAAAD3/wkAAgAHAAoAAAD3/woAAgAJAAsAAAD3/wsAAgALAAcAAAD2/wsAAgALAAoAAAD2/wwAAgAKAAwAAAD2/w0AAgALAAsAAAD2/w4AAgAJAAoAAAD2/w8AAgAIAAwAAAD2/xAAAgAJAAcAAAD1/xAAAgAHAAoAAAD2/xEAAgAMAAcAAAD3/xEAAgAHAAkAAAD3/xAAAgAKAAkAAAD3/w8AAgAHAAoAAAD3/w4AAgAIAAkAAAD3/w0AAgAMAAsAAAD3/wwAAgALAAcAAAD4/wwAAgAIAAgAAAD4/wsAAgAIAAcAAAD4/woAAgAIAAcAAAD4/wkAAgALAAoAAAD4/wgAAgALAAsAAAD5/wgAAgAMAAkAAAD5/wcAAgAMAAsAAAD5/wYAAgAKAAwAAAD5/wUAAgAMAAsAAAD5/wQAAgAIAAcAAAD5/wMAAgAKAAkAAAD5/wIAAgAIAAgAAAD5/wEAAgAIAAkAAAD5/wAAAgAMAAkAAAD5////AgAMAAoAAAD5//7/AgAJAAgAAAD5//3/AgAJAAwAAAD5//z/AgAKAAgAAAD5//v/AgAIAAkAAAD5//r/AgAKAAcAAAD5//n/AgAHAAgAAAD5//j/AgAJAAkAAAD5//f/AgAIAAsAAAD5//b/AgAIAAwAAAD5//X/AgAKAAgAAAD5/wkAAgAIAAcAAAD5/woAAgALAAwAAAD5/wsAAgAKAAgAAAD5/wwAAgAMAAoAAAD5/w0AAgAIAAsAAAD4/w0AAgAKAAoAAAD4/w4AAgAHAAsAAAD4/w8AAgAKAAwAAAD4/xAAAgAHAAcAAAD4/xEAAgAIAAwAAAD4/xIAAgALAAkAAAD5/xIAAgAJAAgAAAD5/xEAAgAIAAsAAAD5/xAAAgAJAAcAAAD5/w8AAgALAAgAAAD5/w4AAgAKAAcAAAD5/xMAAgAJAAgAAAD4/xQAAgAIAAcAAAD6/+7/AgAIAAkAAAD6/+//AgAKAAgAAAD6//D/AgAMAAkAAAD6//H/AgAMAAcAAAD6//L/AgALAAoAAAD6//P/AgALAAcAAAD6//T/AgAMAAgAAAD6//X/AgAIAAgAAAD6//b/AgAMAAwAAAD6//f/AgAIAAoAAAD6//j/AgAMAAoAAAD6//n/AgALAAoAAAD6//r/AgALAAsAAAD6//v/AgAIAAgAAAD6//z/AgAIAAcAAAD6//3/AgAJAAgAAAD6//7/AgAMAAgAAAD6////AgAIAAwAAAD6/wAAAgAJAAoAAAD6/wEAAgAKAAcAAAD6/wIAAgAJAAwAAAD6/wMAAgAIAAkAAAD6/wQAAgAIAAcAAAD6/wUAAgAKAAsAAAD6/wYAAgALAAgAAAD6/wcAAgAJAAcAAAD6/wgAAgAKAAkAAAD6/wkAAgALAAsAAAD6/woAAgAHAAgAAAD6/wsAAgAJAAwAAAD6/wwAAgAHAAkAAAD6/w0AAgAHAAwAAAD6/w4AAgAIAAcAAAD6/w8AAgAHAAsAAAD6/xAAAgAMAAkAAAD6/xEAAgAHAAkAAAD6/xIAAgAMAAkAAAD6/xMAAgAKAAwAAAD6/xQAAgALAAkAAAD7/+7/AgAJAAgAAAD7/+//AgAIAAsAAAD7//D/AgAKAAoAAAD7//H/AgALAAcAAAD7//L/AgAJAAwAAAD7//P/AgAMAAcAAAD7//T/AgAJAAgAAAD7//X/AgALAAoAAAD7//b/AgAKAAcAAAD7//f/AgAIAAwAAAD7//j/AgALAAkAAAD7//n/AgAKAAkAAAD7//r/AgAIAAcAAAD7//v/AgAIAAcAAAD7//z/AgAKAAgAAAD7//3/AgAMAAgAAAD7//7/AgAHAAgAAAD7////AgAMAAsAAAD7/wAAAgAMAAoAAAD7/wEAAgAKAAkAAAD7/wIAAgAIAAoAAAD7/wMAAgAHAAkAAAD7/wQAAgAMAAgAAAD7/wUAAgAKAAkAAAD7/wYAAgAIAAgAAAD7/wcAAgAMAAoAAAD7/wgAAgAKAAgAAAD7/wkAAgAKAAgAAAD7/woAAgALAAcAAAD7/wsAAgAHAAgAAAD7/wwAAgALAAgAAAD7/w0AAgAMAAgAAAD7/w4AAgAHAAkAAAD7/w8AAgALAAwAAAD7/xAAAgAHAAcAAAD7/xEAAgAJAAwAAAD7/xIAAgAJAAgAAAD7/xMAAgAMAAkAAAD7/xQAAgAIAAoAAAD8/+7/AgAHAAsAAAD8/+//AgAHAAsAAAD8//D/AgALAAgAAAD8//H/AgAJAAkAAAD8//L/AgAHAAwAAAD8//P/AgAKAAcAAAD8//T/AgALAAcAAAD8//X/AgAHAAwAAAD8//b/AgAMAAgAAAD8//f/AgAIAAcAAAD8//j/AgAJAAkAAAD8//n/AgAJAAwAAAD8//r/AgAIAAwAAAD8//v/AgALAAoAAAD8//z/AgAJAAkAAAD8//3/AgAKAAcAAAD8//7/AgALAAoAAAD8////AgAKAAcAAAD8/wAAAgAMAAoAAAD8/wEAAgAIAAoAAAD8/wIAAgALAAwAAAD8/wMAAgAMAAsAAAD8/wQAAgALAAoAAAD8/wUAAgAMAAcAAAD8/wYAAgAIAAkAAAD8/wcAAgAKAAoAAAD8/wgAAgAHAAoAAAD8/wkAAgALAAgAAAD8/woAAgAHAAoAAAD8/wsAAgAIAAcAAAD8/wwAAgAMAAoAAAD8/w0AAgAJAAgAAAD8/w4AAgAJAAkAAAD8/w8AAgAKAAgAAAD8/xAAAgAKAAcAAAD8/xEAAgALAAwAAAD8/xIAAgAHAAkAAAD8/xMAAgALAAcAAAD8/xQAAgAJAAkAAAD9/+7/AgAIAAcAAAD9/+//AgAHAAoAAAD9//D/AgAHAAcAAAD9//H/AgAIAAcAAAD9//L/AgAJAAkAAAD9//P/AgAJAAsAAAD9//T/AgAHAAwAAAD9//X/AgAMAAgAAAD9//b/AgAMAAoAAAD9//f/AgALAAsAAAD9//j/AgAJAAgAAAD9//n/AgAKAAoAAAD9//r/AgAIAAsAAAD9//v/AgAMAAgAAAD9//z/AgAMAAoAAAD9//3/AgAJAAoAAAD9//7/AgAMAAcAAAD9////AgAIAAcAAAD9/wAAAgAIAAcAAAD9/wEAAgAMAAwAAAD9/wIAAgAIAAsAAAD9/wMAAgAHAAcAAAD9/wQAAgAHAAoAAAD9/wUAAgALAAoAAAD9/wYAAgAIAAkAAAD9/wcAAgAKAAsAAAD9/wgAAgALAAwAAAD9/wkAAgAIAAcAAAD9/woAAgAIAAgAAAD9/wsAAgAHAAkAAAD9/wwAAgAMAAkAAAD9/w0AAgAJAAkAAAD9/w4AAgAKAAwAAAD9/w8AAgAIAAcAAAD9/xAAAgALAAoAAAD9/xEAAgAHAAoAAAD9/xIAAgAMAAcAAAD9/xMAAgAKAAcAAAD9/xQAAgAHAAwAAAD+/+7/AgAMAAcAAAD+/+//AgAHAAwAAAD+//D/AgAKAAkAAAD+//H/AgALAAkAAAD+//L/AgAMAAcAAAD+//P/AgALAAgAAAD+//T/AgAIAAsAAAD+//X/AgAIAAwAAAD+//b/AgAIAAkAAAD+//f/AgALAAwAAAD+//j/AgAIAAwAAAD+//n/AgAMAAoAAAD+//r/AgAMAAgAAAD+//v/AgALAAoAAAD+//z/AgAMAAsAAAD+//3/AgAJAAoAAAD+//7/AgALAAkAAAD+////AgAMAAsAAAD+/wAAAgAJAAwAAAD+/wEAAgAMAAwAAAD+/wIAAgAKAAgAAAD+/wMAAgAIAAgAAAD+/wQAAgALAAkAAAD+/wUAAgALAAgAAAD+/wYAAgAIAAsAAAD+/wcAAgAIAAcAAAD+/wgAAgAIAAkAAAD+/wkAAgAJAAgAAAD+/woAAgAKAAcAAAD+/wsAAgAJAAcAAAD+/wwAAgALAAgAAAD+/w0AAgAHAAsAAAD+/w4AAgAKAAsAAAD+/w8AAgAMAAgAAAD+/xAAAgAHAAsAAAD+/xEAAgAHAAgAAAD+/xIAAgALAAoAAAD+/xMAAgAKAAcAAAD+/xQAAgAMAAcAAAD//+7/AgALAAsAAAD//+//AgAKAAcAAAD///D/AgAIAAcAAAD///H/AgAIAAoAAAD///L/AgAMAAcAAAD///P/AgAKAAoAAAD///T/AgAKAAcAAAD///X/AgAJAAsAAAD///b/AgAKAAwAAAD///f/AgAKAAoAAAD///j/AgAIAAkAAAD///n/AgAHAAoAAAD///r/AgAMAAoAAAD///v/AgALAAkAAAD///z/AgAMAAgAAAD///3/AgAIAAwAAAD///7/AgAIAAgAAAD/////AgAIAAcAAAD//wAAAgAMAAsAAAD//wEAAgAJAAcAAAD//wIAAgAKAAkAAAD//wMAAgAKAAwAAAD//wQAAgAHAAsAAAD//wUAAgAJAAwAAAD//wYAAgALAAgAAAD//wcAAgAKAAoAAAD//wgAAgALAAsAAAD//wkAAgAHAAoAAAD//woAAgAJAAkAAAD//wsAAgAMAAoAAAD//wwAAgAMAAsAAAD//w0AAgAMAAcAAAD//w4AAgAKAAsAAAD//w8AAgALAAgAAAD//xAAAgALAAcAAAD//xEAAgAKAAgAAAD//xIAAgAKAAcAAAD//xMAAgALAAgAAAD//xQAAgAIAAcAAAA=")
 tile_set = SubResource("TileSet_y5ctq")
 
-[node name="Node2D" type="Node2D" parent="Game/Large"]
-position = Vector2(-500, -770)
+[node name="TnT" type="Node2D" parent="Game/Large"]
+position = Vector2(-500, -1528)
+
+[node name="TnT" type="AnimatedSprite2D" parent="Game/Large/TnT"]
+sprite_frames = SubResource("SpriteFrames_o6tbt")
+animation = &"Yes"
+autoplay = "No"
+
+[node name="TnT2" type="AnimatedSprite2D" parent="Game/Large/TnT"]
+position = Vector2(-229, -75)
+sprite_frames = SubResource("SpriteFrames_o6tbt")
+animation = &"Yes"
+autoplay = "No"
+
+[node name="TnT3" type="AnimatedSprite2D" parent="Game/Large/TnT"]
+position = Vector2(157, -122)
+sprite_frames = SubResource("SpriteFrames_o6tbt")
+animation = &"Yes"
+autoplay = "No"
+
+[node name="TnT4" type="AnimatedSprite2D" parent="Game/Large/TnT"]
+position = Vector2(-169, 9)
+sprite_frames = SubResource("SpriteFrames_o6tbt")
+animation = &"Yes"
+autoplay = "No"
+
+[node name="TnT5" type="AnimatedSprite2D" parent="Game/Large/TnT"]
+position = Vector2(-88, -173)
+sprite_frames = SubResource("SpriteFrames_o6tbt")
+animation = &"Yes"
+autoplay = "No"
+
+[node name="TnT6" type="AnimatedSprite2D" parent="Game/Large/TnT"]
+position = Vector2(44, -226)
+sprite_frames = SubResource("SpriteFrames_o6tbt")
+animation = &"Yes"
+autoplay = "No"
 
 [node name="Default" type="Node2D" parent="."]
 
@@ -7050,4 +7166,6 @@ tile_set = SubResource("TileSet_7vltt")
 [connection signal="body_entered" from="Game/Large/CameraFollow2" to="Game/Character/CharacterBody2D" method="_on_camera_follow_2_body_entered"]
 [connection signal="body_exited" from="Game/Large/CameraFollow2" to="Game/Character/CharacterBody2D" method="_on_camera_follow_2_body_exited"]
 [connection signal="area_entered" from="Game/Large/Chicken/Chicken" to="Game/Large" method="_on_chicken_area_entered"]
+[connection signal="area_entered" from="Game/Large/Chicken/Chicken2" to="Game/Large" method="_on_chicken_2_area_entered"]
+[connection signal="body_entered" from="Game/Large/Chicken/Chicken2" to="Game/Large" method="_on_chicken_2_body_entered"]
 [connection signal="area_entered" from="Game/Large/Small flame/Hiddenfire" to="Game/Large" method="_on_hiddenfire_area_entered"]
