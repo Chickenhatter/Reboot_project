@@ -82,4 +82,5 @@ func _on_lever_area_entered(area: Area2D) -> void:
 
 
 func _on_leave_large_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body is CharacterBody2D:
+		pass

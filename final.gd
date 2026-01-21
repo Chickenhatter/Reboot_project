@@ -12,9 +12,11 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("ui_e"):
 			q = true
 	if q == true:
-		$Leave/AnimatedSprite2D.play("White")
-		$Leave/CollisionShape2D.scale += 1
-		$Leave/AnimatedSprite2D.scale += 1
+		$Area2D/AnimatedSprite2D.play("White")
+		$Area2D/CollisionShape2D.scale.x += 0.1
+		$Area2D/CollisionShape2D.scale.y += 0.1
+		$Area2D/AnimatedSprite2D.scale.x += 0.1
+		$Area2D/AnimatedSprite2D.scale.y += 0.1
 
 
 func _on_leave_body_entered(body: Node2D) -> void:
