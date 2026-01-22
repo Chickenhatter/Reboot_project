@@ -28,8 +28,12 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("ui_e"):
 				$"../Character/CharacterBody2D".position = Vector2(5977.0,-6323)
 				up = true
+				down = false
+				left = false
+				right = false
 				$Moveable/Path2D/PathFollow2D.progress_ratio = 0.5
 				$Moveable/Path2D/PathFollow2D/Path2D/PathFollow2D.progress_ratio = 0.0471
+
 	
 
 
@@ -172,14 +176,16 @@ func _on_switch_5_area_entered(area: Area2D) -> void:
 
 
 func _on_landing_body_entered(body: Node2D) -> void:
-	$"../Character/CharacterBody2D".position = Vector2(6043.0,-8269.0)
-	softlockable = false
+	if body is CharacterBody2D:
+		$"../Character/CharacterBody2D".position = Vector2(6043.0,-8269.0)
+		softlockable = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$"../Character/CharacterBody2D".position = Vector2(5977.0,-6323)
-	softlockable = true
-	up = true
+	if body is CharacterBody2D:
+		$"../Character/CharacterBody2D".position = Vector2(5977.0,-6323)
+		softlockable = true
+		up = true
 
 
 func _on_auhhih_2_area_entered(area: Area2D) -> void:
