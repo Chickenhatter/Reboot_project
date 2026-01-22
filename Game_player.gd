@@ -131,3 +131,12 @@ func _on_camera_followers_body_entered(body: Node2D) -> void:
 func _on_camera_followers_body_exited(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		vert = false
+
+
+func _on_escape_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		
+
+
+func _on_leave_large_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
