@@ -8,7 +8,7 @@ var up = false
 var down = false
 var left = false
 var right = false
-var softlockable = true
+var softlockable = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

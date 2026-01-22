@@ -7,6 +7,7 @@ var twojump = true
 var e = false
 var portal = false
 var vtv = false
+var fourwduh = false
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -53,11 +54,8 @@ func _physics_process(delta: float) -> void:
 			$"../../HtoS/Portal/AnimatedSprite2D".play("Portal")
 	if vtv == true:
 		$"../../HtoS/Portal/Path2D/PathFollow2D".progress += 10
-	if Input.is_action_just_pressed("ui_p"):
-		$".".position = Vector2(6000,-5800)
-		kurt = true
-		vert = true
-		four = true
+	if fourwduh == true:
+		$"../../Camera/Camera2D".position = $".".position
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
@@ -145,6 +143,7 @@ func _on_escape_body_entered(body: Node2D) -> void:
 		kurt = false
 		vert = false
 		$"../../Camera/Camera2D".position = Vector2(-3050,-2000)
+		fourwduh = false
 
 
 func _on_leave_large_body_entered(body: Node2D) -> void:
@@ -153,3 +152,4 @@ func _on_leave_large_body_entered(body: Node2D) -> void:
 		kurt = true
 		vert = true
 		four = true
+		fourwduh = true

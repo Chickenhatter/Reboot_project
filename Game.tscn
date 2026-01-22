@@ -6900,7 +6900,6 @@ size = Vector2(43, 212)
 [node name="Character" type="Node2D" parent="Game"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Game/Character"]
-position = Vector2(5977, -6323)
 script = ExtResource("8_yx171")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Character/CharacterBody2D"]
@@ -6950,7 +6949,7 @@ autoplay = "No"
 [node name="Camera" type="Node2D" parent="Game"]
 
 [node name="Camera2D" type="Camera2D" parent="Game/Camera"]
-position = Vector2(6055, -5765)
+zoom = Vector2(1.5, 1.5)
 
 [node name="House" type="Node2D" parent="Game"]
 script = ExtResource("4_gwjdr")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://c0ts4u6o18bcy"]
+[gd_scene load_steps=46 format=4 uid="uid://c0ts4u6o18bcy"]
 
 [ext_resource type="Texture2D" uid="uid://7wqkadpdnhdh" path="res://icon.svg" id="2_gx2gx"]
 [ext_resource type="Texture2D" uid="uid://dh7815rxyp6jy" path="res://images/New folder/Blue.png" id="4_tfnpb"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://2twt2y2fgrx7" path="res://images/New folder/red.png" id="9_ox2dk"]
 [ext_resource type="Texture2D" uid="uid://dpgcxfb1tr4cg" path="res://images/New folder/Yellow.png" id="10_otolu"]
 [ext_resource type="Script" uid="uid://c71fwmeftals3" path="res://FireStart.gd" id="10_u7ysv"]
+[ext_resource type="Texture2D" uid="uid://mo8dfrhfnotd" path="res://images/Images/AAA.png" id="11_u7ysv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cpsxm"]
 texture = ExtResource("4_tfnpb")
@@ -5541,6 +5542,10 @@ shape = SubResource("RectangleShape2D_e0rss")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Quandevesk"]
 position = Vector2(523, -238)
 shape = SubResource("RectangleShape2D_boguf")
+
+[node name="Aaa" type="Sprite2D" parent="."]
+position = Vector2(-310, -197)
+texture = ExtResource("11_u7ysv")
 
 [connection signal="area_entered" from="Node2D/Character/CharacterBody2D/Area2D/Path2D/PathFollow2D/Fireball" to="Node2D/Character/CharacterBody2D/Area2D" method="_on_fireball_area_entered"]
 [connection signal="body_entered" from="Node2D/Quandevesk" to="Node2D/Character/CharacterBody2D" method="_on_quandevesk_body_entered"]
