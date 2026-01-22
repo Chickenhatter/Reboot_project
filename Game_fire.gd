@@ -1,7 +1,7 @@
 extends Area2D
 var bookholder = false
 var a = false
-var fire = false
+var fire = true
 var sprite = true
 var e = false
 var call = false

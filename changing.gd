@@ -17,13 +17,24 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if up == true:
-		$Moveable/Path2D/PathFollow2D/Path2D/PathFollow2D.progress += 1
+		$Moveable/Path2D/PathFollow2D/Path2D/PathFollow2D.progress += 5
 	if down == true:
-		$Moveable/Path2D/PathFollow2D/Path2D/PathFollow2D.progress -= 1
+		$Moveable/Path2D/PathFollow2D/Path2D/PathFollow2D.progress -= 5
 	if left == true:
-		$Moveable/Path2D/PathFollow2D.progress += 1
+		$Moveable/Path2D/PathFollow2D.progress += 5
 	if right == true:
-		$Moveable/Path2D/PathFollow2D.progress -= 1
+		$Moveable/Path2D/PathFollow2D.progress -= 5
+	if softlockable == true:
+		if Input.is_action_pressed("ui_e"):
+				$"../Character/CharacterBody2D".position = Vector2(5977.0,-6323)
+				up = true
+				$Moveable/Path2D/PathFollow2D.progress_ratio = 0.5
+				$Moveable/Path2D/PathFollow2D/Path2D/PathFollow2D.progress_ratio = 0.0471
+	
+
+
+
+
 
 
 func _on_change_1_area_entered(area: Area2D) -> void:
@@ -161,8 +172,35 @@ func _on_switch_5_area_entered(area: Area2D) -> void:
 
 
 func _on_landing_body_entered(body: Node2D) -> void:
-	$"../Character/CharacterBody2D".position = Vector2()
+	$"../Character/CharacterBody2D".position = Vector2(6043.0,-8269.0)
+	softlockable = false
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	$"../Character/CharacterBody2D".position = Vector2(5977.0,-6323)
+	softlockable = true
+	up = true
+
+
+func _on_auhhih_2_area_entered(area: Area2D) -> void:
+	if area.name == "Pathmove":
+		left = false
+		right = false
+		up = true
+		down = false
+
+func _on_auhhih_1_area_entered(area: Area2D) -> void:
+	if area.name == "Pathmove":
+		left = false
+		right = false
+		up = false
+		down = true
+		
+
+
+func _on_auhhih_3_area_entered(area: Area2D) -> void:
+	if area.name == "Pathmove":
+		left = false
+		right = true
+		up = true
+		down = false

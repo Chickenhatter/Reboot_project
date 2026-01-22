@@ -79,8 +79,3 @@ func _on_lever_area_entered(area: Area2D) -> void:
 					$TnT/Lever/lol.play("Down")
 					v = false
 					$Door/Explode.play("Explo")
-
-
-func _on_leave_large_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D:
-		pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=4 uid="uid://dhj5rixskpqci"]
+[gd_scene load_steps=152 format=4 uid="uid://dhj5rixskpqci"]
 
 [ext_resource type="Texture2D" uid="uid://dh7815rxyp6jy" path="res://images/New folder/Blue.png" id="1_yx171"]
 [ext_resource type="Texture2D" uid="uid://tt3qvdbp4n00" path="res://images/Images/L.png" id="2_cpsxm"]
@@ -6872,6 +6872,27 @@ size = Vector2(612, 222)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ds8mp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qirsl"]
+size = Vector2(195, 3378)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnh27"]
+size = Vector2(4209, 204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw735"]
+size = Vector2(268, 3330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvv74"]
+size = Vector2(3916, 220)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l0qi"]
+size = Vector2(692, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eycq6"]
+size = Vector2(435, 227)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m68t5"]
+size = Vector2(43, 212)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Game" type="Node2D" parent="."]
@@ -6879,7 +6900,7 @@ size = Vector2(612, 222)
 [node name="Character" type="Node2D" parent="Game"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="Game/Character"]
-position = Vector2(5979, -6324)
+position = Vector2(5977, -6323)
 script = ExtResource("8_yx171")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Character/CharacterBody2D"]
@@ -6929,7 +6950,7 @@ autoplay = "No"
 [node name="Camera" type="Node2D" parent="Game"]
 
 [node name="Camera2D" type="Camera2D" parent="Game/Camera"]
-position = Vector2(-3028, -2021)
+position = Vector2(6055, -5765)
 
 [node name="House" type="Node2D" parent="Game"]
 script = ExtResource("4_gwjdr")
@@ -7677,6 +7698,61 @@ position = Vector2(-1346, 718)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Pathal/change7"]
 shape = SubResource("RectangleShape2D_ds8mp")
 
+[node name="Node2D" type="Node2D" parent="Game/Changing"]
+
+[node name="Node2D" type="Node2D" parent="Game/Changing/Node2D"]
+
+[node name="Name" type="Area2D" parent="Game/Changing/Node2D/Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Node2D/Node2D/Name"]
+position = Vector2(2059.5, -27)
+shape = SubResource("RectangleShape2D_qirsl")
+
+[node name="Node2D2" type="Node2D" parent="Game/Changing/Node2D"]
+
+[node name="Name" type="Area2D" parent="Game/Changing/Node2D/Node2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Node2D/Node2D2/Name"]
+position = Vector2(61.5, -1647)
+shape = SubResource("RectangleShape2D_pnh27")
+
+[node name="Node2D3" type="Node2D" parent="Game/Changing/Node2D"]
+
+[node name="Name" type="Area2D" parent="Game/Changing/Node2D/Node2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Node2D/Node2D3/Name"]
+position = Vector2(-1860, -19)
+shape = SubResource("RectangleShape2D_yw735")
+
+[node name="Node2D4" type="Node2D" parent="Game/Changing/Node2D"]
+
+[node name="Name" type="Area2D" parent="Game/Changing/Node2D/Node2D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Node2D/Node2D4/Name"]
+position = Vector2(-4, 1560)
+shape = SubResource("RectangleShape2D_gvv74")
+
+[node name="Node2D2" type="Node2D" parent="Game/Changing"]
+
+[node name="AUHHIH1" type="Area2D" parent="Game/Changing/Node2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Node2D2/AUHHIH1"]
+position = Vector2(1493, 348)
+shape = SubResource("RectangleShape2D_3l0qi")
+
+[node name="AUHHIH2" type="Area2D" parent="Game/Changing/Node2D2"]
+position = Vector2(-1379, -975)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Node2D2/AUHHIH2"]
+position = Vector2(-201, 69)
+shape = SubResource("RectangleShape2D_eycq6")
+
+[node name="AUHHIH3" type="Area2D" parent="Game/Changing/Node2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Game/Changing/Node2D2/AUHHIH3"]
+position = Vector2(928.5, -849)
+shape = SubResource("RectangleShape2D_m68t5")
+
 [node name="Default" type="Node2D" parent="."]
 
 [node name="Tileset" type="Node2D" parent="Default"]
@@ -7726,13 +7802,14 @@ tile_set = SubResource("TileSet_7vltt")
 [connection signal="area_entered" from="Game/Large/Chicken/Chicken2" to="Game/Large" method="_on_chicken_2_area_entered"]
 [connection signal="body_entered" from="Game/Large/Chicken/Chicken2" to="Game/Large" method="_on_chicken_2_body_entered"]
 [connection signal="area_entered" from="Game/Large/Small flame/Hiddenfire" to="Game/Large" method="_on_hiddenfire_area_entered"]
-[connection signal="body_entered" from="Game/Large/Door/LeaveLarge" to="Game/Large" method="_on_leave_large_body_entered"]
+[connection signal="body_entered" from="Game/Large/Door/LeaveLarge" to="Game/Character/CharacterBody2D" method="_on_leave_large_body_entered"]
 [connection signal="area_entered" from="Game/Large/TnT/Lever" to="Game/Large" method="_on_lever_area_entered"]
 [connection signal="area_entered" from="Game/Changing/Switches/Switch 1" to="Game/Changing" method="_on_switch_1_area_entered"]
 [connection signal="area_entered" from="Game/Changing/Switches/Switch 2" to="Game/Changing" method="_on_switch_2_area_entered"]
 [connection signal="area_entered" from="Game/Changing/Switches/Switch 3" to="Game/Changing" method="_on_switch_3_area_entered"]
 [connection signal="area_entered" from="Game/Changing/Switches/Switch 4" to="Game/Changing" method="_on_switch_4_area_entered"]
 [connection signal="area_entered" from="Game/Changing/Switches/Switch 5" to="Game/Changing" method="_on_switch_5_area_entered"]
+[connection signal="body_entered" from="Game/Changing/S_S_E/Area2D" to="Game/Changing" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Game/Changing/S_S_E/Landing" to="Game/Changing" method="_on_landing_body_entered"]
 [connection signal="body_entered" from="Game/Changing/S_S_E/Escape" to="Game/Character/CharacterBody2D" method="_on_escape_body_entered"]
 [connection signal="area_entered" from="Game/Changing/Pathal/change1" to="Game/Changing" method="_on_change_1_area_entered"]
@@ -7742,3 +7819,6 @@ tile_set = SubResource("TileSet_7vltt")
 [connection signal="area_entered" from="Game/Changing/Pathal/change5" to="Game/Changing" method="_on_change_5_area_entered"]
 [connection signal="area_entered" from="Game/Changing/Pathal/change6" to="Game/Changing" method="_on_change_6_area_entered"]
 [connection signal="area_entered" from="Game/Changing/Pathal/change7" to="Game/Changing" method="_on_change_7_area_entered"]
+[connection signal="area_entered" from="Game/Changing/Node2D2/AUHHIH1" to="Game/Changing" method="_on_auhhih_1_area_entered"]
+[connection signal="area_entered" from="Game/Changing/Node2D2/AUHHIH2" to="Game/Changing" method="_on_auhhih_2_area_entered"]
+[connection signal="area_entered" from="Game/Changing/Node2D2/AUHHIH3" to="Game/Changing" method="_on_auhhih_3_area_entered"]
